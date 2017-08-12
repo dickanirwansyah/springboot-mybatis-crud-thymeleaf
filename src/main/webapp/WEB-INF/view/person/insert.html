@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+</head>
+<body>
+  <h3 title="${hello}"></h3>
+    <br/>
+  <form th:action="@{/dataperson/insertperson}" method="POST">
+<table>
+    <thead>
+    <tr>
+        <td>idperson :</td>
+        <td><input type="text" name="idperson"/></td>
+    </tr>
+    <tr>
+        <td>name :</td>
+        <td><input type="text" name="name"/></td>
+    </tr>
+    <tr>
+        <td>sex :</td>
+        <td><input type="text" name="sex"/></td>
+    </tr>
+    <tr>
+        <td>adres :</td>
+        <td><input type="text" name="adres"/></td>
+    </tr>
+    <tr>
+        <td>phone :</td>
+        <td><input type="text" name="phone"/></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Simpan"/></td>
+    </tr>
+    </thead>
+</table>
+  </form>
+</body>
+</html>

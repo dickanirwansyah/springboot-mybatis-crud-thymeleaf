@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h3 th:text="${hello}"></h3>
+    <br/>
+    <table>
+        <thead>
+        <tr>
+            <th>idperson</th>
+            <th>name</th>
+            <th>sex</th>
+            <th>adres</th>
+            <th>phone</th>
+            <th>birthday</th>
+            <th>opsi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person : ${list}">
+            <td th:text="${person.idperson}"></td>
+            <td th:text="${person.name}"></td>
+            <td th:text="${person.sex}"></td>
+            <td th:text="${person.adres}"></td>
+            <td th:text="${person.phone}"></td>
+            <td th:text="${person.birthday}"></td>
+            <td>
+                <a th:href="@{'/dataperson/getperson/' + ${person.idperson}}">Edit</a> |
+                <a th:href="@{'/dataperson/deleteperson/' + ${person.idperson}}"
+                   onclick="return confirm('sure?')"
+                >Hapus</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </body>
+</html>
